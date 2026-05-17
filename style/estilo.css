@@ -34,3 +34,11 @@ body {
     align-items: center;
     color: #FFFFFF;
 }
+
+.direitos-reservados {
+     display: flex;
+     text-align: center;
+     flex-direction: column;
+     width: 100%;
+     color: #ffffff; 
+}
