@@ -1,5 +1,36 @@
-#header {
+body {
+    background-color: #000000;
+}
+
+.header p {
+    color: #FFFFFF;
+}
+.header {
     background-color: #D90000;
+    width: 100%;
     display: flex;
     justify-content: space-around;
+}
+
+.sobre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: right;
+    gap: 25px;
+}
+
+
+#ottawa1 {
+    margin-top: 2%;
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.textos {
+    flex-direction: row;
+    justify-items: space-around;
+    align-items: center;
+    color: #FFFFFF;
 }
