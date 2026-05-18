@@ -90,7 +90,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    
     min-height: 100vh; 
     display: flex;
     justify-content: flex-end; 
@@ -136,6 +135,8 @@ body {
     color: white;
     font-family: 'Reddit Sans';
     margin: 10em;
+    margin-top: 15em;
+    margin-bottom: 15em;
 
 }
 
@@ -185,7 +186,7 @@ body {
 #ganhadores {
     background-color: black;
     color: white;
-    font-family: sans-serif;
+    font-family: 'Poppins';
     padding: 40px 20px;
     max-width: 1000px;
     margin: 0 auto;
@@ -238,9 +239,15 @@ body {
     max-width: 200px;
     height: 120px;
     background-color: #D3D3D3; /* Cor cinza claro da foto */
+    filter: grayscale(100%);
     border: none;
     object-fit: cover;
     margin-bottom: 12px;
+}
+
+.blocos img:hover {
+    filter: none;
+    transition: ease-in;
 }
 
 /* Estilização dos textos internos de cada bloco */
@@ -273,11 +280,28 @@ body {
     text-transform: uppercase;
 }
 
-#ganhadores button:hover {
-    background-color: #b30000; /* Escurece de leve ao passar o mouse */
-}
-
 /* CLASSE AUXILIAR JS: Esconde os blocos ocultos iniciais */
 .hidden-card {
     display: none !important;
+}
+
+#maiores-recordes {
+    color: white;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 15em;
+    margin-bottom: 15em;
+    scroll-margin-top: 5px;
+}
+
+#titulo-carrossel {
+    font-size: 64px;
+    font-family: 'Reddit Sans';
+}
+
+#carrossel-recordes {
+    background-color: #D90000;
+    width: 100%;
+    height: auto;
 }
