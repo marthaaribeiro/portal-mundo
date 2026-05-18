@@ -1,31 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="style/estilo.css">
-    <title>Portal Mundo</title>
+    <title>Portal do Mundo</title>
+    <link rel="stylesheet" href="style/estilo.css">
 </head>
-
 <body>
-    <div class="header">
-        <p class="titulos-header"> INICIO</p>
-        <p class="titulos-header"> GRUPOS</p>
-        <p class="titulos-header"> JOGOS</p>
-        <a href="pages/saibamais.html" class="titulos-header">SAIBA MAIS</a>
+    <div id="header">
+        <div id="nav">
+            <ul id="nav-links">
+                <li><a href="../index.html" class="links-navegacao">INICIO</a></li>
+                <li><a href="#" class="links-navegacao">JOGOS</a></li>
+                <li><a href="pages/grupos.html" class="links-navegacao">GRUPOS</a></li>
+
+                <li class="sub-link">
+                    <a href="saibamais.html" class="links-navegacao">SAIBA MAIS &#9660</a>
+                    <ul class="nav-sub-links">
+                        <li><a href="#intro-saiba-mais">O QUE É A COPA?</a></li>
+                        <li><a href="#contagem-regressiva">CONTAGEM REGRESSIVA</a></li>
+                        <li><a href="#ganhadores">GANHADORES</a></li>
+                        <li><a href="#">MAIORES RECORDES</a></li>
+                        <li><a href="#">COMO FUNCIONA A COPA?</a></li>
+                        <li><a href="#">MASCOTES</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <a href="grupos.html">to testando</a>
-
-
-
+    
 
 </body>
-
-<div class="footer">
-    <div class="direitos-reservados">
-        <p>	&#169 2026 - Todos os direitos reservados.</p>
-     </div>
-</div>
-
 </html>
