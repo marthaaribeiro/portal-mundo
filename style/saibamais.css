@@ -7,14 +7,14 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Deixa a rolagem suave ao clicar nos links */
-    
-    /* Substitua o '90px' pela altura aproximada da sua barra de navegação vermelha + um espacinho de folga */
+    scroll-behavior: smooth; 
     scroll-padding-top: 90px; 
 }
 
 body {
     background-color: black;
+    margin: 0;
+    padding: 0;
 }
 
 #header {
@@ -22,6 +22,7 @@ body {
     position: fixed;
     z-index: 900;
     width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 #nav {
@@ -182,7 +183,7 @@ body {
     color: #ffcccc;
 }
 
-/* Container geral da seção de Ganhadores */
+
 #ganhadores {
     background-color: black;
     color: white;
@@ -205,26 +206,21 @@ body {
 }
 
 
-
-/* Configuração de cada linha de cards */
 #card-ganhadores-1, #card-ganhadores-2, #card-ganhadores-3, 
 #card-ganhadores-4, #card-ganhadores-5, #card-ganhadores-6 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
+    gap: 50px;
     margin-bottom: 25px;
     padding-bottom: 25px;
-    /* Linha divisória fina e sutil idêntica à da foto */
     border-bottom: 2px solid rgb(255, 255, 255); 
 }
 
-/* Remove a linha divisória do último elemento visível por padrão */
 #card-ganhadores-2 {
     border-bottom: none;
 }
 
-/* Cada bloco individual de seleção */
 .blocos {
     flex: 1;
     display: flex;
@@ -233,13 +229,13 @@ body {
     text-align: center;
 }
 
-/* O quadrado cinza da imagem (Placeholder enquanto não tem imagem real) */
 .blocos img {
     width: 100%;
     max-width: 200px;
     height: 120px;
-    background-color: #D3D3D3; /* Cor cinza claro da foto */
+    background-color: #D3D3D3; 
     filter: grayscale(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     border: none;
     object-fit: cover;
     margin-bottom: 12px;
@@ -247,10 +243,11 @@ body {
 
 .blocos img:hover {
     filter: none;
+    transition: transform 0.5s ease-out;
+    transform: scale(1.08);
     transition: ease-in;
 }
 
-/* Estilização dos textos internos de cada bloco */
 .blocos p {
     margin: 2px 0;
     font-size: 14px;
@@ -259,49 +256,123 @@ body {
     text-transform: uppercase;
 }
 
-/* O segundo parágrafo (o ano) fica um pouco mais suave/fino */
 .blocos p + p {
     font-weight: normal;
     color: #e0e0e0;
 }
 
-/* Estilo do Botão VEJA MAIS */
 #ganhadores button {
-    background-color: #D90000; /* Vermelho do tema */
+    background-color: #D90000;
     color: white;
     border: none;
     padding: 12px 30px;
     font-size: 14px;
     font-weight: bold;
-    border-radius: 50px; /* Deixa as bordas totalmente arredondadas */
+    border-radius: 50px; 
     cursor: pointer;
     margin-top: 20px;
     transition: background-color 0.2s ease;
     text-transform: uppercase;
 }
 
-/* CLASSE AUXILIAR JS: Esconde os blocos ocultos iniciais */
 .hidden-card {
     display: none !important;
 }
 
 #maiores-recordes {
+    display: flex;
+    flex-direction: column;
     color: white;
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-top: 15em;
-    margin-bottom: 15em;
-    scroll-margin-top: 5px;
+    width: 100%;
+    margin-top: 10em;   
+    margin-bottom: 0;   
 }
 
 #titulo-carrossel {
-    font-size: 64px;
-    font-family: 'Reddit Sans';
+    text-align: left;
+    font-size: 50px; 
+    font-family: 'Reddit Sans', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-left: 5%;
+    margin-bottom: 0.8em;
+    letter-spacing: 1px;
 }
 
 #carrossel-recordes {
     background-color: #D90000;
     width: 100%;
-    height: auto;
+    min-height: 450px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 0;   
+}
+
+.cards-carrossel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px; 
+    padding: 0 2em;
+    gap: 4em;
+}
+
+.imagem-carrossel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-carrossel img {
+    width: 100%;
+    max-width: 450px;
+    height: 400px;
+    object-fit: cover; 
+    object-position: center top;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+.textos-carrossel {
+    flex: 1.2;     
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;  
+}
+
+.titulo-card-carrossel {
+    font-family: 'Reddit Sans', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+.subtitulo-card-carrossel {
+    font-family: 'Reddit Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+   
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgb(255, 255, 255); 
+}
+
+.texto-card-carrossel {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;   
+    line-height: 1.6;
+    color: #ffffff;
+    text-align: justify;
 }
