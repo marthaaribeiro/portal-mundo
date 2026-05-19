@@ -86,35 +86,35 @@ body {
 }
 
 .sobre {
-    min-height: 10000000vh;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: right;
-    gap: 25px;
-    padding-top: 50px;
+    flex-direction: flex-start;
 }
 
+.imgs-texto-lado {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 250%;
+    height: 20%;
+    margin-right: 20px;
+    margin-top: 8%;
+}
 
-.img-capital {
-    width: 500px;
-    height: 300px;
+.img-capital, .img-brasao {
+    width: 100%;
     border-radius: 20px;
-    margin-top: 80px;
 }
+
 
 .img-brasao {
-    align-items: left;
-    width: 20px;
-    height: 10px;
     background-color: #FFFFFF;
 }
 
 .textos {
+    display: flex;
+    flex-grow: 1;
     flex-direction: row;
-    justify-items: space-around;
-    align-items: center;
-    margin-top: 80px;
+     margin-top: 8%;
     color: #FFFFFF;
 }
 
