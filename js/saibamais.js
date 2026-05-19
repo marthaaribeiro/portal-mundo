@@ -26,7 +26,7 @@ const atualizaContagem = setInterval(function() {
 document.addEventListener("DOMContentLoaded", function() {
     // Seleciona o botão e todas as linhas do bloco 3 ao 6
     // Substitua a linha antiga que selecionava o botão por esta:
-    const btnVejaMais = document.getElementById("btn-veja-mais");
+    const btnVejaMais = document.getElementById("btn-veja-mais-ganhadores");
     const blocosOcultos = [
         document.getElementById("card-ganhadores-3"),
         document.getElementById("card-ganhadores-4"),

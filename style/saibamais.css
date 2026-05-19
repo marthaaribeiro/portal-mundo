@@ -3,7 +3,7 @@
     padding: 0; 
     box-sizing: border-box; 
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    
 }
 
 html {
@@ -51,6 +51,7 @@ body {
     text-decoration: none;
     padding-bottom: 15px; 
     margin-bottom: -15px;
+    font-weight: bold;
 }
 
 
@@ -123,6 +124,7 @@ body {
     display: inline-block; 
     font-family: 'Reddit Sans';
     font-weight: bold;
+    
 }
 
 #texto-intro {
@@ -146,6 +148,7 @@ body {
     margin-bottom: 25px;
     letter-spacing: 2px;
     font-family: 'Reddit Sans';
+    font-weight: bold;
 }
 
 #texto-contagem {
@@ -177,10 +180,11 @@ body {
 }
 
 .time-label {
-    font-size: 11px;
+    font-size: 20px;
     letter-spacing: 1px;
     margin-top: 8px;
-    color: #ffcccc;
+    color: #ffffff;
+    font-weight: 400;
 }
 
 
@@ -198,6 +202,7 @@ body {
     font-family: 'Reddit Sans';
     font-size: 64px;
     margin-bottom: 0.2em;
+    font-weight: bold;
 }
 
 #texto-ganhadores {
@@ -251,13 +256,13 @@ body {
 .blocos p {
     margin: 2px 0;
     font-size: 14px;
-    font-weight: bold;
+   
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .blocos p + p {
-    font-weight: normal;
+    
     color: #e0e0e0;
 }
 
@@ -292,7 +297,7 @@ body {
     text-align: left;
     font-size: 50px; 
     font-family: 'Reddit Sans', sans-serif;
-    font-weight: 800;
+    font-weight: bold;
     text-transform: uppercase;
     margin-left: 5%;
     margin-bottom: 0.8em;
@@ -348,7 +353,7 @@ body {
 .titulo-card-carrossel {
     font-family: 'Reddit Sans', sans-serif;
     font-size: 42px;
-    font-weight: 900;
+    font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
     line-height: 1.1;
@@ -358,11 +363,10 @@ body {
 .subtitulo-card-carrossel {
     font-family: 'Reddit Sans', sans-serif;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #ffffff;
-   
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 2px solid rgb(255, 255, 255); 
@@ -371,8 +375,40 @@ body {
 .texto-card-carrossel {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    font-weight: 400;   
     line-height: 1.6;
     color: #ffffff;
+    text-align: justify;
+}
+
+
+#como-funciona-a-copa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-image: url('../imagens/backgrounds/background-explicacao-saibamais.jpg');
+    background-size: cover;
+    background-repeat: repeat-x;
+    height: 900px;
+    text-align: center;
+}
+
+#titulo-explicacao {
+    font-family: 'Reddit Sans';
+    font-size: 64px;
+    font-weight: bold;
+    margin-left: 8em;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width: fit-content;
+}
+
+#texto-explicacao {
+    font-size: 24px;
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-top: 2em;
     text-align: justify;
 }
