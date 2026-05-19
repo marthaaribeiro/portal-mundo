@@ -7,9 +7,8 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Deixa a rolagem suave ao clicar nos links */
-    
-    /* Substitua o '90px' pela altura aproximada da sua barra de navegação vermelha + um espacinho de folga */
+    scroll-behavior: smooth; 
+   
     scroll-padding-top: 90px; 
 }
 
@@ -87,35 +86,33 @@ body {
 
 .sobre {
     display: flex;
-    flex-direction: flex-start;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.grupos {
+    margin-top: 110px;
+}
+
+.secao-introducao {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
 }
 
 .imgs-texto-lado {
     display: flex;
     flex-direction: column;
-    gap: 20px; 
-    width: 250%;
-    height: 20%;
-    margin-right: 20px;
-    margin-top: 8%;
+    width: 350px;
+    gap: 10px;
 }
 
-.img-capital, .img-brasao {
-    width: 100%;
+.imgs-texto-lado img {
     border-radius: 20px;
 }
 
-
-.img-brasao {
-    background-color: #FFFFFF;
-}
-
-.textos {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: row;
-     margin-top: 8%;
-    color: #FFFFFF;
+.texto-pt1 {
+    margin-left: 30px;
 }
 
 .direitos-reservados {
