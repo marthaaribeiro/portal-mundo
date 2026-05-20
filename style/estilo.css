@@ -91,7 +91,22 @@ body {
 }
 
 .grupos {
+    display: flex;
     margin-top: 110px;
+    gap: 100px;
+    justify-content: center;
+}
+
+.grupos button {
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.h1 {
+    color: #ffffff;
+    justify-content: center;
+    width: 100%;
 }
 
 .secao-introducao {
@@ -101,10 +116,12 @@ body {
 }
 
 .imgs-texto-lado {
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 290px;
     gap: 10px;
+    color: #ffffff;
 }
 
 .imgs-texto-lado img {
