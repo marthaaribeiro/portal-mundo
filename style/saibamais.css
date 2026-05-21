@@ -477,7 +477,9 @@ body {
     display: none;
 }
 
-
+.esconder-mascote {
+    display: none !important;
+}
 
 
 .mascotes-secundarios {

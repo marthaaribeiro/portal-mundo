@@ -321,50 +321,73 @@
 
     <script src="../js/saibamais.js"></script>
     <script>
-    const todosMascotesMenores = document.querySelectorAll("#card-secundario .mascotes-secundarios");
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        const fotoPrincipal = document.getElementById("foto-mascote-selecionado");
+        const nomePrincipal = document.getElementById("nome-mascote-selecionado");
+        const paisAnoPrincipal = document.getElementById("pais-ano-mascote-selecionado");
+        const textoPrincipal = document.getElementById("texto-mascote-selecionado");
+        
+        
+        const containerLista = document.getElementById("card-secundario");
+
+        if (!fotoPrincipal || !containerLista) return;
+
     
-    const fotoPrincipal = document.getElementById("foto-mascote-selecionado");
-    const nomePrincipal = document.getElementById("nome-mascote-selecionado");
-    const paisAnoPrincipal = document.getElementById("pais-ano-mascote-selecionado");
-    const textoPrincipal = document.getElementById("texto-sobre-o-nascote-selecionado");
+        const itemFulecoLista = document.createElement("div");
+        itemFulecoLista.className = "mascotes-secundarios esconder-mascote"; // Começa escondido
+        itemFulecoLista.innerHTML = `
+            <img class="foto-mascote" src="${fotoPrincipal.src}" alt="${fotoPrincipal.alt}">
+            <div class="textos-mascotes">
+                <p class="nome-mascote">${nomePrincipal.textContent}</p>
+                <p class="pais-ano-mascote">${paisAnoPrincipal.textContent}</p>
+                <p class="texto-mascote">${textoPrincipal.textContent}</p>
+            </div>
+        `;
+        
+        containerLista.insertBefore(itemFulecoLista, containerLista.firstChild);
 
-    // Guardamos qual elemento da lista está "escondido" (o que representa o principal atual)
-    // No início, é o Fuleco que adicionamos com id="item-lista-fuleco"
-    let itemListaEscondidoAtual = document.getElementById("item-lista-fuleco");
+        
+        let itemEscondidoAtual = itemFulecoLista;
 
-    todosMascotesMenores.forEach(mascoteClicado => {
-        mascoteClicado.addEventListener("click", () => {
+        
+        containerLista.addEventListener("click", (evento) => {
             
-            // 1. Pegamos as informações do mascote que o usuário clicou
-            const imgEl = mascoteClicado.querySelector(".foto-mascote");
-            const nomeEl = mascoteClicado.querySelector(".nome-mascote");
-            const paisAnoEl = mascoteClicado.querySelector(".pais-ano-mascote");
-            const textoEl = mascoteClicado.querySelector(".texto-mascote");
+            const cardClicado = evento.target.closest(".mascotes-secundarios");
+            
+            
+            if (!cardClicado || cardClicado.classList.contains("esconder-mascote")) return;
 
-            // Animação de sumir a foto principal antiga
-            const fadeOut = fotoPrincipal.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 250 });
+            
+            const novaImg = cardClicado.querySelector(".foto-mascote");
+            const novoNome = cardClicado.querySelector(".nome-mascote");
+            const novoPaisAno = cardClicado.querySelector(".pais-ano-mascote");
+            const novoTexto = cardClicado.querySelector(".texto-mascote");
+
+            
+            const fadeOut = fotoPrincipal.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200 });
 
             fadeOut.onfinish = () => {
-                // 2. O mascote que estava escondido na lista volta a aparecer
-                if (itemListaEscondidoAtual) {
-                    itemListaEscondidoAtual.style.display = "flex"; // ou "block", dependendo do seu CSS
-                }
                 
+                if (itemEscondidoAtual) {
+                    itemEscondidoAtual.classList.remove("esconder-mascote");
+                }
 
-                // 3. Atualizamos o card principal com os dados do que foi clicado
-                fotoPrincipal.src = imgEl.src;
-                nomePrincipal.textContent = nomeEl.textContent;
-                paisAnoPrincipal.textContent = paisAnoEl.textContent;
-                textoPrincipal.textContent = textoEl.textContent;
+                
+                fotoPrincipal.src = novaImg.src;
+                fotoPrincipal.alt = novaImg.alt;
+                nomePrincipal.textContent = novoNome.textContent;
+                paisAnoPrincipal.textContent = novoPaisAno.textContent;
+                textoPrincipal.textContent = novoTexto.textContent;
 
-                // 4. Escondemos o mascote clicado da lista (já que ele virou o principal)
-                mascoteClicado.style.display = "none";
+                
+                cardClicado.classList.add("esconder-mascote");
 
-                // 5. Atualizamos nossa variável para lembrar quem está escondido agora
-                itemListaEscondidoAtual = mascoteClicado;
+                
+                itemEscondidoAtual = cardClicado;
 
-                // Animação de surgir a nova foto principal
-                fotoPrincipal.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300 });
+                
+                fotoPrincipal.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250 });
             };
         });
     });
