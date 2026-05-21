@@ -247,37 +247,128 @@
         <p id="titulo-mascotes">MASCOTES</p>
         <div id="cards-mascotes">
             <div id="card-mascote-selecionado">
-                <img id="foto-mascote-selecionado" src="#" alt="">
-                <p id="nome-macote-selecionado"></p>
-                <p id="pais-ano-mascote-selecionado"></p>
+                <img id="foto-mascote-selecionado" src="../imagens/mascotes/fuleco (1).jpg" alt="foto-do-fuleco">
+                <p id="nome-mascote-selecionado">FULECO</p>
+                <p id="pais-ano-mascote-selecionado">(Brasil, 2014)</p>
+                <p id="texto-mascote-selecionado">Um tatu-bola, espécie nativa do Brasil e ameaçada de extinção. O nome unia as palavras Futebol e Ecologia.</p>
             </div>
 
-            <div #card-secundario>
+            <div id="card-secundario">
+                <div class="mascotes-secundarios esconder-mascote" id="item-lista-fuleco">
+                    <img class="foto-mascote" src="../imagens/mascotes/fuleco (1).jpg" alt="foto-do-fuleco">
+                    <div class="textos-mascotes">
+                        <p class="nome-mascote">FULECO</p>
+                        <p class="pais-ano-mascote">(Brasil, 2014)</p>
+                        <p class="texto-mascote">Um tatu-bola, espécie nativa do Brasil e ameaçada de extinção. O nome unia as palavras Futebol e Ecologia.</p>
+                    </div>
+                </div>
                 <div class="mascotes-secundarios">
-                    <img class="foto-mascote" src="#" alt="">
-                    <p class="nome-macote"></p>
-                    <p class="pais-ano-mascote"></p>
+                    <img class="foto-mascote" src="../imagens/mascotes/laeeb (1).png" alt="foto-do-laeeb">
+                    <div class="textos-mascotes">
+                        <p class="nome-mascote">La'eeb</p>
+                        <p class="pais-ano-mascote">(Catar, 2022)</p>
+                        <p class="texto-mascote">Um lenço de cabeça tradicional da cultura árabe (ghutra) animado. Seu nome significa "jogador super habilidoso" e ele vinha do "mascoteverso".</p>
+                    </div>
                 </div>
 
                 <div class="mascotes-secundarios">
-                    <img class="foto-mascote" src="#" alt="">
-                    <p class="nome-macote"></p>
-                    <p class="pais-ano-mascote"></p>
+                    <img class="foto-mascote" src="../imagens/mascotes/zabivaka (1).jpg" alt="foto-do-zabivaka">
+                    <div class="textos-mascotes">
+                        <p class="nome-mascote">Zabivaka</p>
+                        <p class="pais-ano-mascote">(Rússia, 2018)</p>
+                        <p class="texto-mascote">Um lobo siberiano cujo nome significa "aquele que marca gols" em russo.</p>
+                    </div>
                 </div>
 
                 <div class="mascotes-secundarios">
-                    <img class="foto-mascote" src="#" alt="">
-                    <p class="nome-macote"></p>
-                    <p class="pais-ano-mascote"></p>
+                    <img class="foto-mascote" src="../imagens/mascotes/zakumi (1).jpg" alt="foto-do-zakumi">
+                    <div class="textos-mascotes">
+                        <p class="nome-mascote">Zakumi</p>
+                        <p class="pais-ano-mascote">(África-do-Sul, 2010)</p>
+                        <p class="texto-mascote">Um leopardo verde e amarelo. O nome misturava "ZA" (África do Sul) e "Kumi" (dez, pelo ano de 2010).</p>
+                    </div>
                 </div>
 
-                <button id="btn-veja-mais-mascotes">VEJA MAIS</button>
+                <div class="mascotes-secundarios">
+                    <img class="foto-mascote" src="../imagens/mascotes/laeeb (1).png" alt="foto-do-laeeb">
+                    <div class="textos-mascotes">
+                        <p class="nome-mascote">La'eeb</p>
+                        <p class="pais-ano-mascote">(Catar, 2022)</p>
+                        <p class="texto-mascote">Um lenço de cabeça tradicional da cultura árabe (ghutra) animado. Seu nome significa "jogador super habilidoso" e ele vinha do "mascoteverso".</p>
+                    </div>
+                </div>
+
+                <div class="mascotes-secundarios">
+                    <img class="foto-mascote" src="../imagens/mascotes/zabivaka (1).jpg" alt="foto-do-zabivaka">
+                    <div class="textos-mascotes">
+                        <p class="nome-mascote">Zabivaka</p>
+                        <p class="pais-ano-mascote">(Rússia, 2018)</p>
+                        <p class="texto-mascote">Um lobo siberiano cujo nome significa "aquele que marca gols" em russo.</p>
+                    </div>
+                </div>
+
+                <div class="mascotes-secundarios">
+                    <img class="foto-mascote" src="../imagens/mascotes/zakumi (1).jpg" alt="foto-do-zakumi">
+                    <div class="textos-mascotes">
+                        <p class="nome-mascote">Zakumi</p>
+                        <p class="pais-ano-mascote">(África-do-Sul, 2010)</p>
+                        <p class="texto-mascote">Um leopardo verde e amarelo. O nome misturava "ZA" (África do Sul) e "Kumi" (dez, pelo ano de 2010).</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="../js/saibamais.js"></script>
+    <script>
+    const todosMascotesMenores = document.querySelectorAll("#card-secundario .mascotes-secundarios");
+    
+    const fotoPrincipal = document.getElementById("foto-mascote-selecionado");
+    const nomePrincipal = document.getElementById("nome-mascote-selecionado");
+    const paisAnoPrincipal = document.getElementById("pais-ano-mascote-selecionado");
+    const textoPrincipal = document.getElementById("texto-sobre-o-nascote-selecionado");
 
+    // Guardamos qual elemento da lista está "escondido" (o que representa o principal atual)
+    // No início, é o Fuleco que adicionamos com id="item-lista-fuleco"
+    let itemListaEscondidoAtual = document.getElementById("item-lista-fuleco");
+
+    todosMascotesMenores.forEach(mascoteClicado => {
+        mascoteClicado.addEventListener("click", () => {
+            
+            // 1. Pegamos as informações do mascote que o usuário clicou
+            const imgEl = mascoteClicado.querySelector(".foto-mascote");
+            const nomeEl = mascoteClicado.querySelector(".nome-mascote");
+            const paisAnoEl = mascoteClicado.querySelector(".pais-ano-mascote");
+            const textoEl = mascoteClicado.querySelector(".texto-mascote");
+
+            // Animação de sumir a foto principal antiga
+            const fadeOut = fotoPrincipal.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 250 });
+
+            fadeOut.onfinish = () => {
+                // 2. O mascote que estava escondido na lista volta a aparecer
+                if (itemListaEscondidoAtual) {
+                    itemListaEscondidoAtual.style.display = "flex"; // ou "block", dependendo do seu CSS
+                }
+                
+
+                // 3. Atualizamos o card principal com os dados do que foi clicado
+                fotoPrincipal.src = imgEl.src;
+                nomePrincipal.textContent = nomeEl.textContent;
+                paisAnoPrincipal.textContent = paisAnoEl.textContent;
+                textoPrincipal.textContent = textoEl.textContent;
+
+                // 4. Escondemos o mascote clicado da lista (já que ele virou o principal)
+                mascoteClicado.style.display = "none";
+
+                // 5. Atualizamos nossa variável para lembrar quem está escondido agora
+                itemListaEscondidoAtual = mascoteClicado;
+
+                // Animação de surgir a nova foto principal
+                fotoPrincipal.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300 });
+            };
+        });
+    });
+</script>
 </body>
 
 </html>

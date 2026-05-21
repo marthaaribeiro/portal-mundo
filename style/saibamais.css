@@ -295,7 +295,7 @@ body {
 
 #titulo-carrossel {
     text-align: left;
-    font-size: 50px; 
+    font-size: 64px; 
     font-family: 'Reddit Sans', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -411,4 +411,118 @@ body {
     margin-right: 8em;
     margin-top: 2em;
     text-align: justify;
+}
+
+#mascotes{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-weight: 600;
+    margin-top: 10em;
+   
+}
+
+#titulo-mascotes {
+    font-size: 64px;
+    margin-left: 5em;
+}
+
+#cards-mascotes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-weight: bold;
+}
+
+#card-mascote-selecionado {
+    width: 450px;
+    gap: 2em;
+}
+
+#foto-mascote-selecionado {
+    width: 600px;
+    height: 550px;
+    border-radius: 30px;
+}
+
+#nome-mascote-selecionado {
+    font-size: 48px;
+    color: #D90000;
+}
+
+#pais-ano-mascote-selecionado {
+    font-size: 30px;
+    font-style: italic;
+}
+
+#texto-sobre-o-mascote-selecionado {
+    font-size: 24px;
+}
+
+#card-secundario {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    max-height: 665px;
+    overflow: auto;
+    padding: 10px;
+  
+}
+
+#item-lista-fuleco {
+    display: none;
+}
+
+
+
+
+.mascotes-secundarios {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    margin-bottom: 2em;
+}
+
+.foto-mascote {
+    background-color: #D3D3D3;
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    filter: grayscale(100);
+}
+
+.nome-mascote {
+    font-size: 32px;
+    color: #D90000;
+}
+
+.pais-ano-mascote {
+    font-size: 24px;
+    font-style: italic
+}
+
+.texto-mascote {
+    font-size: 15px;
+}
+
+#card-secundario::-webkit-scrollbar {
+    width: 6px;               /* Largura da barra */
+}
+
+#card-secundario::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05); /* Fundo da barra */
+    border-radius: 10px;
+}
+
+#card-secundario::-webkit-scrollbar-thumb {
+    background: #ccc;         /* Cor do indicador de rolagem */
+    border-radius: 10px;
+}
+
+#card-secundario::-webkit-scrollbar-thumb:hover {
+    background: #999;         /* Cor do indicador quando passa o mouse */
 }
