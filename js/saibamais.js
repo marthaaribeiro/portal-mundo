@@ -68,15 +68,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-
-
-// Seleciona o botão e a seção pelos IDs
-const botao = document.getElementById('#grupo-b');
-const secao = document.getElementById('.grupo-b');
-
-// Adiciona o evento de clique
-botao.addEventListener('click', () => {
-    // O toggle adiciona a classe se ela não existir, e remove se ela existir
-    secao.classList.toggle('hidden');
-});
