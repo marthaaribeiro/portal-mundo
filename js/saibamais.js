@@ -23,6 +23,53 @@ const atualizaContagem = setInterval(function() {
 }, 1000);
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Seleciona o botão e todas as linhas do bloco 3 ao 6
+    // Substitua a linha antiga que selecionava o botão por esta:
+    const btnVejaMais = document.getElementById("btn-veja-mais-ganhadores");
+    const blocosOcultos = [
+        document.getElementById("card-ganhadores-3"),
+        document.getElementById("card-ganhadores-4"),
+        document.getElementById("card-ganhadores-5"),
+        document.getElementById("card-ganhadores-6")
+    ];
+    const linhaDois = document.getElementById("card-ganhadores-2");
+
+    // Configuração Inicial: Esconde as linhas extras assim que a página carrega
+    blocosOcultos.forEach(bloco => {
+        if (bloco) bloco.classList.add("hidden-card");
+    });
+
+    // Controla o clique do botão
+    btnVejaMais.addEventListener("click", function() {
+        // Verifica se a primeira linha oculta está escondida
+        const estaEscondido = blocosOcultos[0].classList.contains("hidden-card");
+
+        if (estaEscondido) {
+            // Mostra todas as linhas guardadas
+            blocosOcultos.forEach(bloco => {
+                if (bloco) bloco.classList.remove("hidden-card");
+            });
+            // Devolve a borda divisória para a linha 2, já que agora tem conteúdo abaixo dela
+            linhaDois.style.borderBottom = "2px solid rgb(255, 255, 255)";
+            
+            // Muda o texto do botão
+            btnVejaMais.innerText = "VEJA MENOS";
+        } else {
+            // Esconde as linhas novamente
+            blocosOcultos.forEach(bloco => {
+                if (bloco) bloco.classList.add("hidden-card");
+            });
+            // Remove a borda da linha 2 para ficar idêntico ao design limpo original
+            linhaDois.style.borderBottom = "none";
+            
+            // Retorna o texto original do botão
+            btnVejaMais.innerText = "VEJA MAIS";
+        }
+    });
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
     
     const botoesGrupos = document.querySelectorAll(".btn-grupo");
@@ -82,4 +129,82 @@ document.addEventListener("DOMContentLoaded", function () {
     if (grupoInicial) {
         grupoInicial.click();
     }
+
+    // --- 3. SISTEMA DE LEITURA DA URL (COM TESTE DE DIAGNÓSTICO) ---
+    const parametros = new URLSearchParams(window.location.search);
+    const grupoSelecionado = parametros.get("grupo"); 
+
+    console.log("URL lida com sucesso! O grupo identificado foi:", grupoSelecionado);
+
+    if (grupoSelecionado) {
+        const botaoFiltroAlvo = document.querySelector(`.btn-grupo[data-grupo="${grupoSelecionado}"]`);
+        
+        if (botaoFiltroAlvo) {
+            console.log("Botão encontrado no HTML! Forçando o clique nele...");
+            
+            // Força a remoção de qualquer classe ativa antiga antes de clicar
+            botoesGrupos.forEach(b => b.classList.remove("ativo-btn"));
+            conteudosGrupos.forEach(c => c.classList.remove("ativo"));
+            
+            // Executa o clique
+            botaoFiltroAlvo.click();
+        } else {
+            console.log("Erro: O botão com data-grupo='" + grupoSelecionado + "' não existe no HTML.");
+            abrirGrupoPadrao();
+        }
+    } else {
+        console.log("Nenhum grupo veio na URL. Abrindo o padrão (Grupo B).");
+        abrirGrupoPadrao();
+    }
+
+    function abrirGrupoPadrao() {
+        const grupoInicial = document.querySelector('.btn-grupo[data-grupo="grupo-b"]');
+        if (grupoInicial) {
+            grupoInicial.click();
+        }
+    }
 });
+
+// 1. Listas com os caminhos das imagens para cada grupo (na ordem do texto)
+const imagensGrupoB = [
+    "../imagens/brasoes/brasao-canada-bw.jpeg",
+    "../imagens/brasoes/brasao-bosnia.png",
+    "../imagens/brasoes/brasao-catar.png",
+    "../imagens/brasoes/brasao-suica.png"
+];
+
+const imagensGrupoC = [
+    "../imagens/brasoes/brasao-brasil.png",
+    "../imagens/brasoes/brasao-marrocos.png",
+    "../imagens/brasoes/brasao-escocia.png",
+    "../imagens/brasoes/brasao-haiti.png"
+];
+
+const imagensGrupoG = [
+    "../imagens/brasoes/brasao-belgica.png",
+    "../imagens/brasoes/brasao-egito.png",
+    "../imagens/brasoes/brasao-ira.png",
+    "../imagens/brasoes/brasao-nzelandia.png"
+];
+
+// 2. Selecionando os elementos de imagem do HTML através do ID
+const imgB = document.getElementById("img-grupo-b");
+const imgC = document.getElementById("img-grupo-c");
+const imgG = document.getElementById("img-grupo-g");
+
+// Variável para controlar qual país está ativo (0 a 3)
+let indiceAtual = 0;
+
+// 3. Função que faz a troca das imagens simultaneamente
+function alternarBrasoes() {
+    // Avança para o próximo índice. Se chegar ao fim (4), volta para o 0
+    indiceAtual = (indiceAtual + 1) % 4;
+
+    // Atualiza o atributo 'src' de cada imagem ao mesmo tempo
+    imgB.src = imagensGrupoB[indiceAtual];
+    imgC.src = imagensGrupoC[indiceAtual];
+    imgG.src = imagensGrupoG[indiceAtual];
+}
+
+// 4. Dispara a função a cada 3000 milissegundos (3 segundos)
+setInterval(alternarBrasoes, 3000);

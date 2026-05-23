@@ -3,6 +3,7 @@
     padding: 0; 
     box-sizing: border-box; 
     font-family: 'Poppins', sans-serif;
+    color: white;
     
 }
 
@@ -424,7 +425,7 @@ body {
 
 #titulo-mascotes {
     font-size: 64px;
-    margin-left: 5em;
+    margin-left: 2em;
 }
 
 #cards-mascotes {
@@ -527,4 +528,184 @@ body {
 
 #card-secundario::-webkit-scrollbar-thumb:hover {
     background: #999;         /* Cor do indicador quando passa o mouse */
+}
+
+
+/*home*/
+
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    height: 100vh;         
+    padding-left: 50px;         
+    background-image: url("../imagens/backgrounds/background_home.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#home-textos p:nth-of-type(1) {
+    font-size: 1rem;
+    color: #D90000;
+    background-color: #ffffff;
+    width: fit-content;
+    
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+#home-textos p:nth-of-type(2) {
+    font-size: 64px;
+    color: #ffffff;
+    font-family: 'Reddit Sans', sans-serif;
+    margin-right: 900px;
+    margin-bottom: 15px;
+}
+
+
+#home-textos p:nth-of-type(3) {
+    font-size: 1rem;
+    white-space: nowrap;
+    color: #ffffff;
+}
+
+#grupos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+#blocos-grupos {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+
+.card-grupos {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 25em;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.card-grupos img {
+    width: 300px;
+    height: auto;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-grupos p:nth-of-type(1) {
+    font-size: 2em;
+    color: #D90000;
+    font-family: 'Reddit Sans';
+    font-weight: bold;
+}
+
+.card-grupos p:nth-of-type(2) {
+    font-size: 1em;
+    color: black;
+    font-weight: bold;
+}
+
+.card-grupos a {
+    text-decoration: none;
+    border: none;
+    background-color: #D90000;
+    font-weight: bold;
+    padding: 10px 20px;
+    width: fit-content;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+#jogos {
+    display: flex;
+    background-color: #D90000;
+    justify-content: center;
+
+    
+}
+
+#blocos-jogos {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 30px;
+}
+
+
+
+.card-jogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 30px;
+ 
+}
+
+.card-jogo:nth-child(2) {
+    border-left: #530000 5px solid;
+    border-right: #530000 5px solid;
+}
+
+.card-jogo p:nth-of-type(1) {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.card-jogo p:nth-of-type(2) {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card-jogo p:nth-of-type(3) {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.brasoes-jogos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.brasoes-jogos p:nth-last-of-type(1) {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 1.5em;
+}
+
+.brasao-1, .brasao-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.brasao-1 p:nth-of-type(1) {
+    font-size: 1em;
+    font-weight: bold;
+    white-space: nowrap;
+    
+}
+
+.brasao-2 p:nth-of-type(1) {
+    font-size: 1em;
+    font-weight: bold;
+    white-space: nowrap;
 }

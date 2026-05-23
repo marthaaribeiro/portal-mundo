@@ -6,7 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal do Mundo</title>
-    <link rel="stylesheet" href="../style/estilo.css">
+    <link rel="stylesheet" href="../style/saibamais.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
 </head>
 
 
@@ -14,34 +24,133 @@
     <div id="header">
         <div id="nav">
             <ul id="nav-links">
-                <li><a href="../index.html" class="links-navegacao">INICIO</a></li>
+                <li><a href="index.html" class="links-navegacao">INICIO</a></li>
                 <li><a href="#" class="links-navegacao">JOGOS</a></li>
-                <li><a href="pages/grupos.html" class="links-navegacao">GRUPOS</a></li>
+                <li class="sub-link"><a href="pages/grupos.html" class="links-navegacao">GRUPOS &#9660</a>
+                    <ul class="nav-sub-links">
+                        <li><a href="pages/grupos.html?grupo=grupo-b">GRUPO B</a></li>
+                        <li><a href="pages/grupos.html?grupo=grupo-c">GRUPO C</a></li>
+                        <li><a href="pages/grupos.html?grupo=grupo-g">GRUPO G</a></li>
+                        <li><a href="pages/grupos.html?grupo=grupo-anfitrioes">ANFITRÕES</a></li>
+                    </ul>
+                </li>
 
 
                 <li class="sub-link">
                     <a href="pages/saibamais.html" class="links-navegacao">SAIBA MAIS &#9660</a>
                     <ul class="nav-sub-links">
-                        <li><a href="#intro-saiba-mais">O QUE É A COPA?</a></li>
-                        <li><a href="#contagem-regressiva">CONTAGEM REGRESSIVA</a></li>
-                        <li><a href="#ganhadores">GANHADORES</a></li>
-                        <li><a href="#">MAIORES RECORDES</a></li>
-                        <li><a href="#">COMO FUNCIONA A COPA?</a></li>
-                        <li><a href="#">MASCOTES</a></li>
+                        <li><a href="pages/saibamais.html#intro-saiba-mais">O QUE É A COPA?</a></li>
+                        <li><a href="pages/saibamais.html#contagem-regressiva">CONTAGEM REGRESSIVA</a></li>
+                        <li><a href="pages/saibamais.html#ganhadores">GANHADORES</a></li>
+                        <li><a href="pages/saibamais.html#maiores-recordes">MAIORES RECORDES</a></li>
+                        <li><a href="pages/saibamais.html#como-funciona-a-copa">COMO FUNCIONA A COPA?</a></li>
+                        <li><a href="pages/saibamais.html#mascotes">MASCOTES</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
 
-
-   
-    <div class="footer">
-        <div class="direitos-reservados">
-            <p> &#169 2026 - Todos os direitos reservados.</p>
+    <div id="home">
+        <div id="home-textos">
+            <p>PORTAL MUNDO</p>
+            <p>ONDE O MUNDO SE ENCONTRA EM CAMPO!</p>
+            <p>CONHEÇA PAISES, CULTURA E MUITO MAIS.</p>
         </div>
     </div>
 
+    <div id="grupos">
+        <div id="blocos-grupos">
+
+            <div class="card-grupos">
+                <img src="imagens/brasoes/brasao-canada-bw.jpeg" id="img-grupo-b" alt="foto-brasao-grupo-b">
+                <p>GRUPO B</p>
+                <p>CANADÁ, BÓSNIA, CATAR, SUIÇA.</p>
+                <a href="pages/grupos.html?grupo=grupo-b">CONHEÇA</a>
+            </div>
+
+            <div class="card-grupos">
+                <img src="imagens/brasoes/brasao-brasil.png" id="img-grupo-c" alt="foto-brasao-grupo-c">
+                <p>GRUPO C</p>
+                <p>BRASIL, MARROCOS, ESCÓSCIA, HAITI.</p>
+                <a href="pages/grupos.html?grupo=grupo-c">CONHEÇA</a>
+            </div>
+
+            <div class="card-grupos">
+                <img src="imagens/brasoes/brasao-belgica.png" id="img-grupo-g" alt="foto-brasao-grupo-g">
+                <p>GRUPO G</p>
+                <p>BÉLGICA, EGITO, IRÃ, NOVA ZELÂNDIA</p>
+                <a href="pages/grupos.html?grupo=grupo-g">CONHEÇA</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="jogos">
+        <div id="blocos-jogos">
+            <div class="card-jogo">
+                <p>16:00</p>
+
+
+                <div class="brasoes-jogos">
+                    <div class="brasao-1">
+                        <img src="imagens/brasoes/brasao-mexico.png" alt="brasao-mexico">
+                        <p>MÉXICO</p>
+                    </div>
+                      
+                    <div class="brasao-2">
+                        <img src="imagens/brasoes/brasao-africa-do-sul.png" alt="brasao-africa-do-sul">
+                        <p>ÁFRICA DO SUL</p>
+                    </div>
+                </div>
+
+
+                <p>ESTÁDIO AZTECA</p>
+                <p>11/06/2026</p>
+            </div>
+
+            <div class="card-jogo">
+                <p>22:00</p>
+
+                <div class="brasoes-jogos">
+                    <div class="brasao-1">
+                        <img src="imagens/brasoes/brasao-usa.png" alt="brasao-usa">
+                        <p>ESTADOS UNIDOS</p>
+                    </div>
+                      
+                    <div class="brasao-2">
+                        <img src="imagens/brasoes/brasao-paraguai.png" alt="brasao-paraguai">
+                        <p>PARAGUAI</p>
+                    </div>
+                </div>
+
+                <p>SOFI STADIUM</p>
+                <p>12/06/2026</p>
+            </div>
+
+            <div class="card-jogo">
+                <p>23:00</p>
+
+                <div class="brasoes-jogos">
+                    <div class="brasao-1">
+                        <img src="imagens/brasoes/brasao-coreia.png" alt="brasao-coreia-do-sul">
+                        <p>COREIA DO SUL</p>
+                    </div>
+        
+                    <div class="brasao-2">
+                        <img src="imagens/brasoes/brasao-tchequia.png" alt="brasao-tchequia">
+                        <p>TCHÉQUIA</p>
+                    </div>
+                </div>
+
+
+                <p>ESTÁDIO AKROM</p>
+                <p>12/06/2026</p>
+            </div>
+        </div>
+    </div>
+
+<script src="js/saibamais.js"></script>
 
 </body>
 
