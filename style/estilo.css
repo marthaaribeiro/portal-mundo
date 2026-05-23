@@ -146,6 +146,67 @@ body {
     color: #ffffff;
 }
 
+/* Esconde o grupo COMPLETO (inclusive as caixas vermelhas com borda) */
+.conteudo-grupo {
+    display: none !important; /* Força sumir tudo */
+    margin: 50px auto;
+    max-width: 1200px;
+    border: 4px solid #D90000;
+    box-shadow: inset 0px 0px 10px 5px #D90000;
+    border-radius: 40px;
+    padding: 30px;
+}
+
+/* Esconde os países individualmente */
+.conteudo-pais {
+    display: none;
+}
+
+/* Quando o grupo ganha a classe '.ativo', ele passa a existir na tela */
+.conteudo-grupo.ativo {
+    display: block !important;
+}
+
+/* Quando o país ganha a classe '.ativo', ele aparece dentro do grupo */
+.conteudo-pais.ativo {
+    display: block !important;
+}
+
+/* Estilização dos botões de Países */
+.botoes-paises {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-pais {
+    background-color: #222;
+    color: white;
+    border: 2px solid #D90000;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-pais:hover, .btn-pais.ativo-btn {
+    background-color: #D90000;
+    color: black;
+}
+
+
+.btn-grupo {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.btn-grupo.ativo-btn {
+    border-bottom: 3px solid #D90000;
+}
+
 .direitos-reservados {
      display: flex;
      text-align: center;

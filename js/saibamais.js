@@ -23,48 +23,63 @@ const atualizaContagem = setInterval(function() {
 }, 1000);
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Seleciona o botão e todas as linhas do bloco 3 ao 6
-    // Substitua a linha antiga que selecionava o botão por esta:
-    const btnVejaMais = document.getElementById("btn-veja-mais-ganhadores");
-    const blocosOcultos = [
-        document.getElementById("card-ganhadores-3"),
-        document.getElementById("card-ganhadores-4"),
-        document.getElementById("card-ganhadores-5"),
-        document.getElementById("card-ganhadores-6")
-    ];
-    const linhaDois = document.getElementById("card-ganhadores-2");
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const botoesGrupos = document.querySelectorAll(".btn-grupo");
+    const conteudosGrupos = document.querySelectorAll(".conteudo-grupo");
 
-    // Configuração Inicial: Esconde as linhas extras assim que a página carrega
-    blocosOcultos.forEach(bloco => {
-        if (bloco) bloco.classList.add("hidden-card");
+    botoesGrupos.forEach(botao => {
+        botao.addEventListener("click", function () {
+            // 1. Desmarca todos os botões de grupos
+            botoesGrupos.forEach(b => b.classList.remove("ativo-btn"));
+            
+            // 2. Esconde TODOS os containers de grupos (isso vai sumir com as caixas extras)
+            conteudosGrupos.forEach(c => c.classList.remove("ativo"));
+
+            // 3. Ativa o botão clicado
+            this.classList.add("ativo-btn");
+            
+            // 4. Mostra apenas o grupo correspondente
+            const grupoId = this.getAttribute("data-grupo");
+            const grupoAlvo = document.getElementById(grupoId);
+            
+            if (grupoAlvo) {
+                grupoAlvo.classList.add("ativo");
+                
+                // 5. Clica automaticamente no primeiro país deste grupo selecionado
+                const primeiroBotaoPais = grupoAlvo.querySelector(".btn-pais");
+                if (primeiroBotaoPais) {
+                    primeiroBotaoPais.click();
+                }
+            }
+        });
     });
 
-    // Controla o clique do botão
-    btnVejaMais.addEventListener("click", function() {
-        // Verifica se a primeira linha oculta está escondida
-        const estaEscondido = blocosOcultos[0].classList.contains("hidden-card");
+    // --- CONTROLE DOS PAÍSES INTERNOS ---
+    const botoesPaises = document.querySelectorAll(".btn-pais");
 
-        if (estaEscondido) {
-            // Mostra todas as linhas guardadas
-            blocosOcultos.forEach(bloco => {
-                if (bloco) bloco.classList.remove("hidden-card");
-            });
-            // Devolve a borda divisória para a linha 2, já que agora tem conteúdo abaixo dela
-            linhaDois.style.borderBottom = "2px solid rgb(255, 255, 255)";
+    botoesPaises.forEach(botao => {
+        botao.addEventListener("click", function () {
+            const grupoPai = this.closest(".conteudo-grupo");
             
-            // Muda o texto do botão
-            btnVejaMais.innerText = "VEJA MENOS";
-        } else {
-            // Esconde as linhas novamente
-            blocosOcultos.forEach(bloco => {
-                if (bloco) bloco.classList.add("hidden-card");
-            });
-            // Remove a borda da linha 2 para ficar idêntico ao design limpo original
-            linhaDois.style.borderBottom = "none";
+            // Limpa apenas os botões e países internos DESTE grupo
+            grupoPai.querySelectorAll(".btn-pais").forEach(b => b.classList.remove("ativo-btn"));
+            grupoPai.querySelectorAll(".conteudo-pais").forEach(c => c.classList.remove("ativo"));
+
+            // Ativa o país atual
+            this.classList.add("ativo-btn");
+            const paisId = this.getAttribute("data-pais");
+            const paisAlvo = document.getElementById(paisId);
             
-            // Retorna o texto original do botão
-            btnVejaMais.innerText = "VEJA MAIS";
-        }
+            if (paisAlvo) {
+                paisAlvo.classList.add("ativo");
+            }
+        });
     });
+
+    // Inicializa abrindo o Grupo B
+    const grupoInicial = document.querySelector('.btn-grupo[data-grupo="grupo-b"]');
+    if (grupoInicial) {
+        grupoInicial.click();
+    }
 });
