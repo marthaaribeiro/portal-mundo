@@ -254,3 +254,39 @@ const logosOriginais = trilho.innerHTML;
 // Duplica os logos dentro da mesma div
 // Isso cria a ilusão de ótica necessária para o loop do CSS funcionar perfeitamente
 trilho.innerHTML = logosOriginais + logosOriginais;
+
+
+// Aguarda o HTML carregar completamente antes de rodar o script
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // Seleciona todos os cards e os dois botões
+    const cards = document.querySelectorAll('.cards-carrossel');
+    const btnAnterior = document.getElementById('btn-anterior');
+    const btnProximo = document.getElementById('btn-proximo');
+
+    let cardAtualIndex = 0;
+
+    function atualizarCarrossel(novoIndex) {
+        // 1. Remove a classe 'active' do card atual
+        cards[cardAtualIndex].classList.remove('active');
+        
+        // 2. Atualiza o índice para o novo card escolhido
+        cardAtualIndex = novoIndex;
+        
+        // 3. Adiciona a classe 'active' no novo card
+        cards[cardAtualIndex].classList.add('active');
+    }
+
+    // Evento do botão "Avançar"
+    btnProximo.addEventListener('click', () => {
+        let proximoIndex = (cardAtualIndex + 1) % cards.length;
+        atualizarCarrossel(proximoIndex);
+    });
+
+    // Evento do botão "Voltar"
+    btnAnterior.addEventListener('click', () => {
+        let anteriorIndex = (cardAtualIndex - 1 + cards.length) % cards.length;
+        atualizarCarrossel(anteriorIndex);
+    });
+
+});
