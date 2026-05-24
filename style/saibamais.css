@@ -420,6 +420,7 @@ body {
     color: white;
     font-weight: 600;
     margin-top: 10em;
+    margin-bottom: 5em;
    
 }
 
@@ -708,4 +709,146 @@ body {
     font-size: 1em;
     font-weight: bold;
     white-space: nowrap;
+}
+
+#o-que-e-a-copa {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10em;
+    margin-bottom: 10em;
+}
+
+#textos-o-que-e-a-copa {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+#textos-o-que-e-a-copa p:nth-of-type(1) {
+    font-size: 64px;
+    font-weight: bold;
+    font-family: 'Reddit Sans';
+    color: #D90000;
+}
+
+#textos-o-que-e-a-copa p:nth-of-type(2) {
+    font-size: 20px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#textos-o-que-e-a-copa a {
+    background-color: #D90000;
+    font-size: 15px;
+    font-weight: bold;
+    width: fit-content;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+#imagens-o-que-e-a-copa {
+    margin-right: 5em;
+}
+
+#imagens-o-que-e-a-copa img{
+    width: 500px;
+    height: 450px;
+    filter: grayscale(100);
+}
+
+#patrocinadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    height: 200px;
+}
+
+.carrossel-container {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+}
+
+#imagens-patrocinadores {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    gap: 5em;
+    padding-right: 5em;
+    animation: rolarInfinito 25s linear infinite;
+}
+
+
+#imagens-patrocinadores img {
+    height: 50px; 
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+#imagens-patrocinadores img.logo-fifa {
+    height: 35px;
+}
+
+#imagens-patrocinadores:hover {
+    animation-play-state: paused;
+}
+
+@keyframes rolarInfinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D90000;
+    padding: 70px 80px;
+}
+
+#links-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+}
+
+#links-footer ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 17px;
+    gap: 0.5em;
+}
+
+#links-footer ul li a {
+    text-decoration: none;
+}
+
+#links-footer ul li a:hover{
+    color: #530000;
+}
+
+#links-footer ul li:nth-of-type(1) {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#logo-footer a {
+    background-color: white;
+    color: #D90000;
+    text-decoration: none;
+    width: fit-content;
+    padding: 10px 20px;
+    font-weight: bold;
 }

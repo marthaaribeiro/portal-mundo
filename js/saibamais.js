@@ -208,3 +208,49 @@ function alternarBrasoes() {
 
 // 4. Dispara a função a cada 3000 milissegundos (3 segundos)
 setInterval(alternarBrasoes, 3000);
+
+
+// 1. Lista com o caminho das imagens que você quer alternar
+const imagens = [
+    "imagens/img-gerais/jogando-1.jpg",
+    "imagens/img-gerais/jogando-2.jpg", // Substitua pelos seus caminhos reais
+    "imagens/img-gerais/jogando-3.jpg",
+    "imagens/img-gerais/jogando-4.avif"
+];
+
+// 2. Seleciona a tag <img> dentro da div correta
+const imgElement = document.querySelector("#imagens-o-que-e-a-copa img");
+
+let indexAtual = 0;
+const tempoIntervalo = 4000; // Tempo em milissegundos (4 segundos)
+
+function trocarImagem() {
+    // Aplica um efeito de sumiço rápido antes de trocar a foto
+    imgElement.style.opacity = 5;
+
+    setTimeout(() => {
+        // Avança para o próximo índice da lista (e volta ao zero quando chega no fim)
+        indexAtual = (indexAtual + 1) % imagens.length;
+        
+        // Altera o atributo src e o alt da imagem
+        imgElement.src = imagens[indexAtual];
+        imgElement.alt = `jogadores-jogando-${indexAtual + 1}`;
+        
+        // Traz a imagem de volta com a nova foto
+        imgElement.style.opacity = 1;
+    }, 500); // Meio segundo esperando o fade-out acontecer
+}
+
+// Inicia o intervalo para rodar a função infinitamente
+setInterval(trocarImagem, tempoIntervalo);
+
+
+// Seleciona a div que contém as imagens
+const trilho = document.getElementById("imagens-patrocinadores");
+
+// Pega o HTML interno atual (todos os logos originais)
+const logosOriginais = trilho.innerHTML;
+
+// Duplica os logos dentro da mesma div
+// Isso cria a ilusão de ótica necessária para o loop do CSS funcionar perfeitamente
+trilho.innerHTML = logosOriginais + logosOriginais;
