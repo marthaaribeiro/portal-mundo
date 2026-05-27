@@ -13,13 +13,13 @@ html {
 }
 
 body {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
 }
 
 #header {
-    background-color: #D90000; 
+    background-color: #218e00; 
     position: fixed;
     z-index: 900;
     width: 100%;
@@ -56,6 +56,8 @@ body {
 }
 
 
+
+
 .nav-sub-links {
     display: none;        
     position: absolute;   
@@ -80,7 +82,7 @@ body {
 
 .nav-sub-links li a:hover {
     background-color: #f5f5f5;
-    color: #D90000 !important; 
+    color: #000074 !important; 
 }
 
 .sub-link:hover .nav-sub-links {
@@ -103,7 +105,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end; 
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: right;
     margin-top: 1em;
     padding-right: 4em; 
@@ -119,7 +121,7 @@ body {
 #destaque-titulo-intro {
     font-size: 50px;
     background-color: white;
-    color: #D90000;
+    color: #000074;
     padding: 0 10px; 
     margin-bottom: 0.5em;
     display: inline-block; 
@@ -136,7 +138,7 @@ body {
 #contagem-regressiva {
     scroll-margin-top: 120px;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Reddit Sans';
     margin: 10em;
     margin-top: 15em;
@@ -165,7 +167,8 @@ body {
 
 
 .time-card {
-    background-color: #D90000; 
+    background-color: #fff53e; 
+    
     min-width: 200px;
     padding: 20px 15px;
     border-radius: 8px;
@@ -175,6 +178,7 @@ body {
 
 #dias, #horas, #minutos, #segundos {
     font-size: 64px;
+    color: #000074;
     font-weight: bold;
     margin: 0;
     line-height: 1; 
@@ -184,7 +188,8 @@ body {
     font-size: 20px;
     letter-spacing: 1px;
     margin-top: 8px;
-    color: #ffffff;
+    color: #000074;
+    
     font-weight: 400;
 }
 
@@ -268,7 +273,7 @@ body {
 }
 
 #ganhadores button {
-    background-color: #D90000;
+    background-color: #000074;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -306,7 +311,7 @@ body {
 }
 
 #carrossel-recordes {
-    background-color: #D90000;
+    background-color: #fff53e;
     width: 100%;
     min-height: 450px; 
     display: flex;
@@ -316,7 +321,7 @@ body {
 }
 
 .cards-carrossel {
-    display: flex;
+    display: none; /* 👈 Remova o !important daqui */
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -324,7 +329,15 @@ body {
     max-width: 1100px; 
     padding: 0 2em;
     gap: 4em;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out; /* Aumentei um pouco para o efeito ficar mais suave */
 }
+
+.cards-carrossel.ativo {
+    display: flex; /* 👈 O JavaScript vai ativar isso aqui */
+    opacity: 1;
+}
+
 
 .imagem-carrossel {
     flex: 1;
@@ -357,7 +370,9 @@ body {
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
+    color: #000074;
     line-height: 1.1;
+    white-space: nowrap;
     margin-bottom: 5px;
 }
 
@@ -367,19 +382,20 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #ffffff;
+    color: black;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 2px solid rgb(255, 255, 255); 
+    border-bottom: 2px solid rgb(0, 0, 0); 
 }
 
 .texto-card-carrossel {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     line-height: 1.6;
-    color: #ffffff;
+    color: black;
     text-align: justify;
 }
+
 
 
 #como-funciona-a-copa {
@@ -394,14 +410,20 @@ body {
     height: 900px;
     text-align: center;
 }
+#textos-explicacao {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
 #titulo-explicacao {
     font-family: 'Reddit Sans';
     font-size: 64px;
     font-weight: bold;
-    margin-left: 8em;
+    
     margin-bottom: 20px;
-    padding-bottom: 15px;
+    
     border-bottom: 2px solid rgb(255, 255, 255);
     width: fit-content;
 }
@@ -420,6 +442,7 @@ body {
     color: white;
     font-weight: 600;
     margin-top: 10em;
+    margin-bottom: 5em;
    
 }
 
@@ -452,7 +475,7 @@ body {
 
 #nome-mascote-selecionado {
     font-size: 48px;
-    color: #D90000;
+    color: #fff53e;
 }
 
 #pais-ano-mascote-selecionado {
@@ -500,7 +523,7 @@ body {
 
 .nome-mascote {
     font-size: 32px;
-    color: #D90000;
+    color: #fff53e;
 }
 
 .pais-ano-mascote {
@@ -522,12 +545,12 @@ body {
 }
 
 #card-secundario::-webkit-scrollbar-thumb {
-    background: #ccc;         /* Cor do indicador de rolagem */
+    background: #218e00;         /* Cor do indicador de rolagem */
     border-radius: 10px;
 }
 
 #card-secundario::-webkit-scrollbar-thumb:hover {
-    background: #999;         /* Cor do indicador quando passa o mouse */
+    background: #165d00;         /* Cor do indicador quando passa o mouse */
 }
 
 
@@ -539,7 +562,7 @@ body {
     justify-content: flex-start; 
     height: 100vh;         
     padding-left: 50px;         
-    background-image: url("../imagens/backgrounds/background_home.png"); 
+    background-image: url("../imagens/backgrounds/home.png"); 
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -547,10 +570,9 @@ body {
 
 #home-textos p:nth-of-type(1) {
     font-size: 1rem;
-    color: #D90000;
+    color: #000074;
     background-color: #ffffff;
     width: fit-content;
-    
     padding: 10px 20px;
     text-align: center;
     font-weight: bold;
@@ -606,7 +628,7 @@ body {
 
 .card-grupos p:nth-of-type(1) {
     font-size: 2em;
-    color: #D90000;
+    color: #000074;
     font-family: 'Reddit Sans';
     font-weight: bold;
 }
@@ -620,7 +642,7 @@ body {
 .card-grupos a {
     text-decoration: none;
     border: none;
-    background-color: #D90000;
+    background-color: #000074;
     font-weight: bold;
     padding: 10px 20px;
     width: fit-content;
@@ -630,10 +652,8 @@ body {
 
 #jogos {
     display: flex;
-    background-color: #D90000;
-    justify-content: center;
-
-    
+    background-color: #fff53e;
+    justify-content: center;  
 }
 
 #blocos-jogos {
@@ -652,27 +672,31 @@ body {
     align-items: center;
     box-sizing: border-box;
     padding: 30px;
+    
  
 }
 
 .card-jogo:nth-child(2) {
-    border-left: #530000 5px solid;
-    border-right: #530000 5px solid;
+    border-left: #165d00 5px solid;
+    border-right: #165d00 5px solid;
 }
 
 .card-jogo p:nth-of-type(1) {
     font-size: 1em;
     font-weight: bold;
+    color: #165d00;
 }
 
 .card-jogo p:nth-of-type(2) {
     font-size: 1.5em;
     font-weight: bold;
+    color: #165d00;
 }
 
 .card-jogo p:nth-of-type(3) {
     font-size: 1em;
     font-weight: bold;
+    color: #218e00;
 }
 
 .brasoes-jogos {
@@ -688,6 +712,7 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     margin: 1.5em;
+    color: #218e00;
 }
 
 .brasao-1, .brasao-2 {
@@ -701,6 +726,7 @@ body {
     font-size: 1em;
     font-weight: bold;
     white-space: nowrap;
+    color: #218e00;
     
 }
 
@@ -708,6 +734,7 @@ body {
     font-size: 1em;
     font-weight: bold;
     white-space: nowrap;
+    color: #218e00;
 }
 
 #o-que-e-a-copa {
@@ -728,7 +755,7 @@ body {
     font-size: 64px;
     font-weight: bold;
     font-family: 'Reddit Sans';
-    color: #D90000;
+    color: #fff53e;
 }
 
 #textos-o-que-e-a-copa p:nth-of-type(2) {
@@ -738,7 +765,7 @@ body {
 }
 
 #textos-o-que-e-a-copa a {
-    background-color: #D90000;
+    background-color: #000074;
     font-size: 15px;
     font-weight: bold;
     width: fit-content;
@@ -812,7 +839,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #D90000;
+    background-color: #218e00;
     padding: 70px 80px;
 }
 
@@ -835,7 +862,7 @@ body {
 }
 
 #links-footer ul li a:hover{
-    color: #530000;
+    color: #165d00;
 }
 
 #links-footer ul li:nth-of-type(1) {
@@ -845,7 +872,7 @@ body {
 
 #logo-footer a {
     background-color: white;
-    color: #D90000;
+    color: #000074;
     text-decoration: none;
     width: fit-content;
     padding: 10px 20px;
