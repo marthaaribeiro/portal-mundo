@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    
+}
+
+html {
+    scroll-behavior: smooth; 
+    scroll-padding-top: 90px; 
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: #218e00; 
+    position: fixed;
+    z-index: 900;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#nav {
+    padding: 2em;
+    margin-left: 2em;
+    box-sizing: border-box;
+    
+}
+
+#nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    gap: 5em;
+}
+
+#nav-links li {
+    position: relative;
+}
+
+#nav-links li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 15px; 
+    margin-bottom: -15px;
+    font-weight: bold;
+}
+
+
+
+
+.nav-sub-links {
+    display: none;        
+    position: absolute;   
+    top: 100%;  
+    left: 0;
+    background-color: white; 
+    min-width: 220px;     
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;            
+    z-index: 1000;        
+}
+
+
+.nav-sub-links li a {
+    padding: 15px 20px;
+    font-size: 14px;
+    color: #333 !important; 
+}
+
+
+.nav-sub-links li a:hover {
+    background-color: #f5f5f5;
+    color: #000074 !important; 
+}
+
+.sub-link:hover .nav-sub-links {
+    display: block;
+    transform: translateY(1em);
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #218e00;
+    padding: 70px 80px;
+}
+
+#links-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+}
+
+#links-footer ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 17px;
+    gap: 0.5em;
+}
+
+#links-footer ul li a {
+    text-decoration: none;
+}
+
+#links-footer ul li a:hover{
+    color: #165d00;
+}
+
+#links-footer ul li:nth-of-type(1) {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#logo-footer a {
+    background-color: white;
+    color: #000074;
+    text-decoration: none;
+    width: fit-content;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+
+.grupos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.grupos button {
+    border: none;
+    color: white;
+    font-weight: bold;
+    background: transparent;
+    font-size: 20px;
+    margin-top: 150px;
+}
+
+
+
+.conteudo-grupo {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    font-family: 'Poppins';
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    scroll-margin-top: 5px;
+    margin-bottom: 5em;
+}
+
+.conteudo-grupo p {
+    font-size: 64px;
+    font-family: 'Reddit Sans';
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.conteudo-grupo button {
+    border: none;
+    background-color: #000074;
+    color: white;
+    padding: 10px 20px;
+    width: fit-content;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.card-figurinhas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.card-figurinhas img {
+    width: 600px;
+    height: 800px;
+}
+
+.card-figurinhas img:nth-of-type(2) {
+    width: 600px;
+    height: 400px;
+}
+
+
+
+/* Garante que o botão tenha um espaço e transição suave */
+.btn-grupo {
+    cursor: pointer;
+    padding-bottom: 8px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Aplica a borda inferior no botão ativo */
+.btn-grupo.ativo {
+    border-bottom: 3px solid #ffcc00; /* Escolha a cor da sua preferência para a borda */
+    color: #ffcc00; /* Altera opcionalmente a cor do texto do botão ativo */
+}
+
+/* Força o elemento a sumir quando a classe estiver presente */
+.escondido {
+    display: none !important;
+}
