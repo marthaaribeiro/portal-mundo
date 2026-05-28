@@ -12,8 +12,15 @@
     <div id="header">
         <div id="nav">
             <ul id="nav-links">
-                <li><a href="../index.html" class="links-navegacao">INICIO</a></li>
-                <li><a href="#" class="links-navegacao">JOGOS</a></li>
+                <li><a href="index.html" class="links-navegacao">INICIO</a></li>
+                <li class="sub-link">
+                    <a href="figurinhas.html" class="links-navegacao">FIGURINHAS &#9660</a>
+                    <ul class="nav-sub-links">
+                        <li><a href="figurinhas.html?grupo=grupo-b">GRUPO B</a></li>
+                        <li><a href="figurinhas.html?grupo=grupo-c">GRUPO C</a></li>
+                        <li><a href="figurinhas.html?grupo=grupo-g">GRUPO G</a></li>
+                    </ul>
+                </li>
                 <li class="sub-link"><a href="grupos.html" class="links-navegacao">GRUPOS &#9660</a>
                     <ul class="nav-sub-links">
                         <li><a href="grupos.html?grupo=grupo-b">GRUPO B</a></li>
@@ -22,43 +29,22 @@
                         <li><a href="grupos.html?grupo=grupo-anfitrioes">ANFITRÕES</a></li>
                     </ul>
                 </li>
-
-
                 <li class="sub-link">
                     <a href="saibamais.html" class="links-navegacao">SAIBA MAIS &#9660</a>
                     <ul class="nav-sub-links">
-                        <li><a href="#intro-saiba-mais">O QUE É A COPA?</a></li>
-                        <li><a href="#contagem-regressiva">CONTAGEM REGRESSIVA</a></li>
-                        <li><a href="#ganhadores">GANHADORES</a></li>
-                        <li><a href="#">MAIORES RECORDES</a></li>
-                        <li><a href="#">COMO FUNCIONA A COPA?</a></li>
-                        <li><a href="#">MASCOTES</a></li>
+                        <li><a href="psaibamais.html#intro-saiba-mais">O QUE É A COPA?</a></li>
+                        <li><a href="saibamais.html#contagem-regressiva">CONTAGEM REGRESSIVA</a></li>
+                        <li><a href="saibamais.html#ganhadores">GANHADORES</a></li>
+                        <li><a href="saibamais.html#maiores-recordes">MAIORES RECORDES</a></li>
+                        <li><a href="saibamais.html#como-funciona-a-copa">COMO FUNCIONA A COPA?</a></li>
+                        <li><a href="saibamais.html#mascotes">MASCOTES</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
-    
-    <!--SEÇÃO PRINCIPAL SOBRE (TODOS OS CONTEUDOS FICAM DENTRO DELA)-->
-    <div class="sobre">
 
-        <!--BOTÕES PRINCIPAL DE FILTRAR GRUPOS-->
-        <div class="grupos">
-            <button class="btn-grupo" data-grupo="grupo-b">GRUPO B</button>
-            <button class="btn-grupo" data-grupo="grupo-c">GRUPO C</button>
-            <button class="btn-grupo" data-grupo="grupo-g">GRUPO G</button>
-            <button class="btn-grupo" data-grupo="grupo-anfitrioes">ANFITRIÕES</button>
-        </div>
-
-
-        <!--SEÇÃO DO GRUPO B (TODOS OS CONTEUDOS DOS PAISES DO GRUPO B FICAM AQUI)-->
-        <div id="grupo-b" class="conteudo-grupo">
-            <div class="botoes-paises">
-                <button class="btn-pais" data-pais="canada"> <img class="imgs-botoes" src="../imagens/bandeiras/canada.png"> &nbsp; Canadá</button>
-                <button class="btn-pais" data-pais="bosnia"> <img class="imgs-botoes" src="../imagens/bandeiras/bosnia-and-herzegovina.png"> &nbsp; Bósnia e Herz.</button>
-                <button class="btn-pais" data-pais="catar"> <img class="imgs-botoes" src="../imagens/bandeiras/qatar.png"> &nbsp; Catar</button>
-                <button class="btn-pais" data-pais="suica"> <img class="imgs-botoes" src="../imagens/bandeiras/switzerland.png"> &nbsp; Suíça</button>
-            </div>
+               
             
 
             <!--SEÇÃO GRUPO B: CANADA-->
