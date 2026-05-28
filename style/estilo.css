@@ -104,15 +104,6 @@ body {
     font-weight: bold;
 }
 
-#grupo-b {
-    display: block;
-    margin: 100px;
-    border: 8px blur;
-    border-color: #fff53e;
-    box-shadow: inset 0px 0px 10px 10px #fff53e;
-    border-radius: 40px;
-    padding: 30px;
-}    
 
 .btn-pais {
     display: inline-flex;
