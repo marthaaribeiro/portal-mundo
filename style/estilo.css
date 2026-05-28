@@ -164,25 +164,6 @@ body {
     color: #ffffff;
 }
 
-.pontos-turisticos {
-     display: grid;
-     grid-template-columns: repeat(3, 1fr);
-     text-align: center;
-     margin: auto;
-     align-items: center;
-     justify-content: center;
-     width: fit-content;
-     gap: 30px;
-     margin-top: 30px;
-}
-
-.pontos-turisticos img {
-    width: fit-content;
-    height: 150px;
-    border-radius: 20px;
-    object-fit: cover;
-}
-
 /* Esconde o grupo COMPLETO (inclusive as caixas vermelhas com borda) */
 .conteudo-grupo {
     display: none !important; /* Força sumir tudo */
@@ -242,6 +223,25 @@ body {
 
 .btn-grupo.ativo-btn {
     border-bottom: 3px solid #fff53e;
+}
+
+.pontos-turisticos {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     text-align: center;
+     margin: auto;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     gap: 30px;
+     margin-top: 30px;
+}
+
+.pontos-turisticos img {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
 .cmu-titulo {
